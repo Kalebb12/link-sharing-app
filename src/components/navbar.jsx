@@ -9,10 +9,10 @@ import { MdOutlineRemoveRedEye } from "react-icons/md";
 const Navbar = () => {
   const path = usePathname();
   return (
-    <div className="sm:p-6">
-      <nav className="flex items-center justify-between px-6 sm:py-6 py-4  bg-[--white]">
+    <div className="sm:p-6 max-w">
+      <nav className="flex rounded-xl items-center justify-between px-6 sm:py-6 py-4  bg-[--white]">
         <div className="flex items-center gap-[6px]">
-          <Image src={logo} alt="logo" className="min-w-7 w-[32px] h-[32px] sm:w-[26px] sm:h-[26px]"/>
+          <Image src={logo} alt="logo" className="min-w-8 w-[32px] h-[32px] sm:w-[26px] sm:h-[26px] sm:min-w-0 "/>
           <h1 className="text-[24px] font-bold hidden sm:inline">devlinks</h1>
         </div>
 
@@ -50,9 +50,9 @@ const Navbar = () => {
 
         <Link
           href="/preview"
-          className="sm:px-[27px] px-[16px] font-semibold py-[11px] rounded-lg border border-[--purple]"
+          className="sm:px-[27px] px-[16px] font-semibold py-[11px] rounded-lg border border-[--purple] hover:bg-[--purple-light]"
         >
-          <div className="hidden sm:inline">
+          <div className="hidden sm:inline text-[--purple]">
             Preview
           </div>
           <div className="sm:hidden">
