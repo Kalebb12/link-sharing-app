@@ -1,4 +1,16 @@
-const List = ({ link , i } :{link :[]  , i :number}) => {
+import { useAppContext } from "@/context";
+import { useEffect, useState } from "react";
+
+const List = ({ link , i } :{link :{} ,i:number}) => {
+  const {setGlobalLinks , globalLinks} = useAppContext()
+  const [platform ,setPlatform] = useState("github")
+  const [address ,setAddress]  = useState("")
+  // const handleAdd = () =>{
+  //     setGlobalLinks([...globalLinks , {platform , address}])
+  //     console.log(globalLinks)
+  // }
+
+
   return (
     <div key={i} className="p-5 flex flex-col gap-3 bg-[--light-gray]">
       <div className="flex justify-between">
@@ -8,15 +20,10 @@ const List = ({ link , i } :{link :[]  , i :number}) => {
 
       <div>
         <span>platform</span>
-        <select className="myInput px-4 py-3 rounded-lg border-[--disabled-black] cursor-pointer border outline-none w-full">
-          <option value="">GitHub</option>
-          <option value="">GitHub</option>
-          <option value="">GitHub</option>
-          <option value="">GitHub</option>
-          <option value="">GitHub</option>
-          <option value="">GitHub</option>
-          <option value="">GitHub</option>
-          <option value="">GitHub</option>
+        <select value={platform} onChange={(e)=>{setPlatform(e.target.value)}} className="myInput px-4 py-3 rounded-lg border-[--disabled-black] cursor-pointer border outline-none w-full">
+          <option value="github">GitHub</option>
+          <option value="linkdin">linkdin</option>
+          <option value="hello">hello</option>
         </select>
       </div>
 
@@ -24,6 +31,8 @@ const List = ({ link , i } :{link :[]  , i :number}) => {
         link
         <input
           type="text"
+          value={address}
+          onChange={(e)=>{setAddress(e.target.value)}}
           placeholder="https://www."
           className="myInput px-4 py-3 rounded-lg border-[--disabled-black] cursor-pointer border outline-none w-full"
         />

@@ -3,6 +3,8 @@ import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
 import { clientConfig, serverConfig } from "../config";
 import HomePage from "./HomePage";
+import Login from "./login/page";
+import LinksPage from "./links/page";
 
 export default async function Home() {
   const tokens = await getTokens(cookies(), {
@@ -13,8 +15,8 @@ export default async function Home() {
   });
 
   if (!tokens) {
-    notFound();
+    return <Login />
   }
 
-  return <HomePage email={tokens?.decodedToken.email} />;
+  return <LinksPage email={tokens?.decodedToken.email} />;
 }
