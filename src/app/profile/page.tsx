@@ -12,12 +12,14 @@ const ProfilePage = () => {
         <Mobile />
         <div className="flex flex-col flex-grow">
           <div className="flex flex-col gap-10 bg-[--white] sm:p-10 p-[24px] border-b rounded-xl rounded-b-none">
-            <h1 className="sm:text-[32px] font-bold">Profile Details</h1>
+            <h1 className="sm:text-[32px] font-bold text-[24px]">Profile Details</h1>
             <span>
               Add your details to create a personal touch to your profile.
             </span>
             <div className="flex flex-col gap-6">
-              <div className="h-[233px] bg-[--light-gray]"></div>
+              <div className="bg-[--light-gray] h-[224px]">
+                  <input type="file" name="" id="" />
+              </div>
               <form className="flex flex-col p-5 gap-3 bg-[--light-gray]">
                 <div className="mini:flex-row flex flex-col justify-between">
                   <span>First name*</span>

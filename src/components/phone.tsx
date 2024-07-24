@@ -4,9 +4,9 @@ const Mobile = () => {
   return (
     <div
       id="mobile "
-      className="w-[560px] hidden lg:flex flex-shrink rounded-xl bg-[--white] items-center justify-center"
+      className="min-w-[560px] hidden lg:flex  rounded-xl bg-[--white] items-center justify-center"
     >
-      <Image src={phone} alt="phone screen" className="w-[300px] h-[631px]" />
+      <Image src={phone} alt="phone screen" draggable="false" className="w-[300px] h-[631px]" />
     </div>
   );
 };
