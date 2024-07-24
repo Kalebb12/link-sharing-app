@@ -1,7 +1,7 @@
 import { getTokens } from "next-firebase-auth-edge";
 import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
-import { clientConfig, serverConfig } from "../../config";
+import { clientConfig, serverConfig } from "../config";
 import HomePage from "./HomePage";
 
 export default async function Home() {

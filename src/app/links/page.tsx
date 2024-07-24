@@ -4,11 +4,10 @@ import Image from "next/image";
 import group from "../../../public/Group 273.png";
 import Mobile from "@/components/phone";
 import Footer from "@/components/footer";
-import { useState } from "react";
 import List from "@/components/link_list";
+import { useAppContext } from "@/context";
 const LinksPage = () => {
-  const [links, setLinks] = useState<any>([]);
-  console.log(links);
+  const { links, setLinks } = useAppContext();
   return (
     <div>
       <Navbar />
@@ -29,7 +28,7 @@ const LinksPage = () => {
               </span>
             </div>
 
-            <div className="flex flex-col gap-6 max-h-[500px] transition-all overflow-y-scroll">
+            <div className="flex flex-col gap-6 transition-all">
               <button
                 onClick={() => {
                   setLinks([...links, ["hi"]]);
@@ -53,11 +52,11 @@ const LinksPage = () => {
                   </div>
                 </div>
               ) : (
-                links.map((link: [], i: number) => {
-                  return (
-                    <List key={i} link={link} i={i}/>
-                  );
-                })
+                <div className="max-h-[300px] overflow-y-scroll flex flex-col gap-6">
+                  {links.map((link: [], i: number) => {
+                    return <List key={i} link={link} i={i} />;
+                  })}
+                </div>
               )}
             </div>
           </div>

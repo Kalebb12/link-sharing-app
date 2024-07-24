@@ -4,7 +4,7 @@ import Logo from "../../../public/solar_link-circle-bold.png";
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { app } from "../../../firebase";
+import { app } from "../../firebase";
 import { useRouter } from "next/navigation";
 const Register = () => {
     const [email , setEmail] = useState("")

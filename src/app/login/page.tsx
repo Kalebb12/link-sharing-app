@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { app } from "../../../firebase";
+import { app } from "../../firebase";
 import Image from "next/image";
 import Logo from "../../../public/solar_link-circle-bold.png";
 export default function Login() {
